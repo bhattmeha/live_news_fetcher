@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <style>
+        
+            form {
+                border: 3px solid #f1f1f1;
+}
+            input[type=text],input[type=email], input[type=password] {
+             width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+                }
+                .container {float:center;
+                padding-top: 50px;
+                padding-left: 300px;
+                padding-right: 300px;
+                padding-bottom: 200px;
+                
+                background-color:rgb(243, 247, 242);
+                }
+                button {
+                background-color: rgb(57, 2, 185);
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 25%;
+                }
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+
+        </style>
+    </head>
+    <body>
+        {% include "nav.html" %}
+        {% block head %}
+        {% endblock %}
+        <div class="main">
+            <h1 style="color: red;">{{ error }}</h1>
+        <form method="POST" action="/aftersignup/">
+            <div class="container">
+
+            <label for="username"><b>USERNAME</b></label>
+            <input type="text" placeholder="Enter username" name="uname" required><br><br>
+            <label for="email"><b>EMAIL</b></label>
+            <input type="email" placeholder="Enter email" name="email" required><br>
+            <label for="pswd"><b>PASSWORD</b></label>
+            <input type="password" placeholder="Enter Password" name="pswd" required><br>
+              
+            <label for="gender"><b>GENDER</b></label>
+            <input type="radio" name="gender" value="male">MALE 
+            <input type="radio" name="gender" value="female">FEMALE<br><br>
+            <button type="submit">SIGNUP</button><br><br>
+            <a href="/login/">ALREADY A USER?</a>
+        </div>
+            </form>
+            
+        </div>
+    </body>
+</html>
