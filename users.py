@@ -128,7 +128,7 @@ def about():
 @app.route("/contact/")
 def contact():
     to = "bhatt.meha45@gmail.com"
-    body = """This is a message to all the students. Hows you all are doing??"""
+    body = """This is a message to all the students."""
     m = Message(subject="Mail from flask app",recipients=["bhatt.meha45@gmail.com"],body=body,sender="bhatt.meha45@gmail.com")
     mail.send(m)
     return "SUCCESS"
