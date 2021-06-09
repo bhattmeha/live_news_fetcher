@@ -14,9 +14,9 @@ import requests
 
 app = Flask(__name__)
 
-source = requests.get('https://www.flipkart.com/').text
-soup = BeautifulSoup(source, 'lxml')
-print(soup)
+#source = requests.get('https://www.flipkart.com/').text
+#soup = BeautifulSoup(source, 'lxml')
+#print(soup)
 
 mail=Mail(app)
 
@@ -128,8 +128,7 @@ def about():
 @app.route("/contact/")
 def contact():
     to = "bhatt.meha45@gmail.com"
-    body = """This is a message to all the students who dont't study....
-    If they will not study they will not get job and all there money will be wasted.."""
+    body = """This is a message to all the students. Hows you all are doing??"""
     m = Message(subject="Mail from flask app",recipients=["bhatt.meha45@gmail.com"],body=body,sender="bhatt.meha45@gmail.com")
     mail.send(m)
     return "SUCCESS"
